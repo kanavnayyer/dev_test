@@ -1,0 +1,275 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/tvDashboardLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="124px"
+        android:orientation="horizontal"
+        android:padding="22px"
+        android:background="@color/blue"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvDashboard"
+            android:layout_width="236px"
+            android:layout_height="52px"
+            android:fontFamily="@font/figtree"
+            android:text="Dashboard"
+            android:textColor="#FFFFFF"
+            android:textSize="48px"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="80px"
+            android:layout_height="28px"
+            android:layout_weight="400" />
+
+        <Button
+            android:layout_marginTop="8px"
+            android:id="@+id/btnNavbar"
+            android:layout_width="80px"
+            android:layout_height="100px"
+            android:layout_marginEnd="16px"
+            android:background="@drawable/rounded_button"
+
+            android:drawableBottom="@drawable/baseline_settings_24"
+            android:contentDescription="Settings Button" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_constraintTop_toBottomOf="@id/tvDashboardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100sp"
+        android:paddingBottom="200sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16sp">
+
+                <TextView
+                    android:id="@+id/tvGreeting"
+                    android:layout_width="105sp"
+                    android:layout_height="24sp"
+                    android:lineHeight="24sp"
+                    android:text="Good morning"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8sp" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4sp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvUserName"
+                            android:layout_width="127sp"
+                            android:layout_height="32sp"
+                            android:text="Ajay Manva"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/userIcon"
+                            android:layout_width="28sp"
+                            android:layout_height="28sp"
+                            android:src="@drawable/image"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="8sp"/>
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart1"
+                android:layout_width="328sp"
+                android:layout_height="300sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="320sp"
+                android:layout_height="120sp"
+                android:layout_margin="20sp"
+                android:orientation="horizontal"
+                android:scrollbars="horizontal"
+                tools:listitem="@layout/items_layout" />
+
+            <Button
+                android:layout_margin="20sp"
+                android:id="@+id/btnViewAnalytics"
+                android:layout_width="328sp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#BCBABD"
+                android:text="View Analytics"
+                android:background="@color/blue"
+                android:drawableLeft="@drawable/baseline_show_chart_24"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginTop="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="36sp"
+                    android:orientation="horizontal">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <RadioGroup
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:id="@+id/LinksGroup"
+                            android:layout_width="202sp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/unit_rectancir"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/Toplinkbutton"
+                                android:layout_width="0sp"
+                                android:layout_height="36sp"
+                                android:layout_weight="1"
+                                android:background="@drawable/tabback"
+                                android:button="@null"
+                                android:checked="true"
+                                android:gravity="center"
+                                android:text="Top Links"
+                                android:textColor="@drawable/unitreccolsel"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <RadioButton
+                                android:id="@+id/recentlinkbutton"
+                                android:layout_width="0sp"
+                                android:layout_height="36sp"
+                                android:layout_weight="1"
+                                android:background="@drawable/tabback"
+                                android:button="@null"
+                                android:checked="true"
+                                android:gravity="center"
+                                android:text="Real estate"
+                                android:textColor="@drawable/unitreccolsel"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </RadioGroup>
+                        <ImageView
+                            android:layout_width="36sp"
+                            android:layout_height="match_parent"
+                            android:src="@android:drawable/ic_menu_search"
+                            android:background="@drawable/view_border"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewamazon"
+                    android:layout_width="328sp"
+                    android:layout_height="592sp"
+                    tools:listitem="@layout/item_product" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_marginBottom="40sp"
+                android:id="@+id/btnViewAllLinks"
+                android:layout_width="328sp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_border"
+                android:drawableLeft="@drawable/baseline_link_24"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginTop="40sp"
+                android:text="View all Links" />
+
+            <LinearLayout
+                android:layout_width="328sp"
+                android:layout_height="145sp"
+                android:orientation="vertical"
+                android:padding="8sp"
+                android:layout_gravity="center"
+                android:background="@drawable/blue_border">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="64sp"
+                        android:fontFamily="@font/figtree"
+                        android:text="   Talk with us"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:gravity="center|left"
+                        android:background="#BEF6C6"
+                        android:drawableLeft="@drawable/baseline_message_24"
+                        android:layout_marginBottom="20sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="64sp"
+                        android:fontFamily="@font/figtree"
+                        android:text="  Frequently Asked Questions"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:gravity="center|left"
+                        android:background="#6997DC"
+                        android:drawableLeft="@drawable/baseline_question_mark_24" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:menu="@menu/bottom_nav_menu"
+            app:itemIconTint="@color/selector_bottom_nav"
+            app:itemTextColor="@color/selector_bottom_nav"
+            app:labelVisibilityMode="labeled"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="32dp"
+            android:src="@drawable/baseline_add_circle_outline_24"
+            app:backgroundTint="#B399D8"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
